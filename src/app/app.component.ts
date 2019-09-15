@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
 
     this.signupForm.patchValue({
       'userData': {
-        'username': 'Max',
+        'username': 'Anna',
       },
     });
 
@@ -49,6 +49,7 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm);
+    this.signupForm.reset();
   }
 
   onAddHobby() {

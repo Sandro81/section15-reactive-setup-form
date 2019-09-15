@@ -246,7 +246,12 @@
             'gender': 'male',<br>
             'hobbies':[]<br>
             });</code></p>
-          <p class="card-text">And as in the template driven approach, you also have patchValue of course if you only want to update a part of the form, like for example the username, switch this to Anna, now you should see that the username is changed to Anna, the rest still contains the values I set with setValue.<code>routerLink="/servers" </code></p>
+          <p class="card-text">And as in the template driven approach, you also have patchValue of course if you only want to update a part of the form, like for example the username, switch this to Anna, now you should see that the username is changed to Anna, the rest still contains the values I set with setValue.
+            <br><code>this.signupForm.patchValue(&#123;<br>
+            'userData': &#123;<br>
+            'username': 'Annna',<br>
+            },<br>
+            });</code></p>
         </div>
       </div>
 
