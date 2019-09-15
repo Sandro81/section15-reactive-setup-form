@@ -253,9 +253,11 @@
             },<br>
             });</code></p>
 
-          <p class="card-text">To reset -> <code>      onSubmit() &#123;<br>
+          <p class="card-text">To reset all less the gender radio button -> <code>      onSubmit() &#123;<br>
             console.log(this.signupForm);<br>
-            this.signupForm.reset();<br>
+            this.signupForm.reset(&#123;<br>
+            'gender': 'male',<br>
+            });<br>
             }</code></p>
         </div>
       </div>
