@@ -39,6 +39,19 @@
         <span
           *ngIf="!signupForm.valid && signupForm.touched"
           class="alert-danger">Please enter a valid data!</span><br>
+
+        <div formArrayName="hobbies">
+          <h4>Your Hobbies</h4>
+          <button
+            class="btn btn-primary"
+            type="button"
+          (click)="onAddHobby()">Add Hobby</button>
+          <div class="form-group"
+          *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
+
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
@@ -149,10 +162,20 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 208. Reactive: Arrays of Form Controls (FormArray)</h5>
+          <p class="card-text"> Check the video <a href="https://www.udemy.com/the-complete-guide-to-angular-2/learn/lecture/6656514#content" target="_blank">https://www.udemy.com/the-complete-guide-to-angular-2/learn/lecture/6656514#content</a></p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 209. Reactive: Creating Custom Validators</h5>
           <p class="card-text"> - </p>
           <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
+
+
 
       <!--
       <br>
