@@ -122,7 +122,15 @@
           <p class="card-text">The get method allows us to get access to our controls easily, here you can either specify the control name or I will come back to this later, the path to the control. Now for now the path is the name because we only have one level of nesting in our form object and here, the name is username. So this gives us access to this username control and now valid holds whether this control is valid or not. <code>&#60;span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched" class="alert-danger">Please enter a valid username!&#60;/span></code> So this is how easy you can get access to a control in your form with this get helper method.</p>
         </div>
       </div>
-
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 206. Reactive: Grouping Controls </h5>
+          <p class="card-text"> In the last lecture, I was already mentioning that get also takes the path to an element. What did I mean with that? It's very simple, you can specify a path here because you might have a nested form. Let's say username and e-mail should be inside a FormGroup, we used such forms in the template driven approach too. </p>
+          <p class="card-text">So here we could have a FormGroup which of course like the outer FormGroup for the overall form, also takes a Javascript object and now we can add our form controls inside of this group, so now we have a nested form. <code>routerLink="/servers" </code></p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
 
       <!--
       <br>
