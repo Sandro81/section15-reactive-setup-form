@@ -3,28 +3,31 @@
   <div class="row">
     <div class="col">
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            formControlName="username"
-            class="form-control">
-          <span
-            *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched"
-            class="alert-danger">Please enter a valid username!</span>
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              formControlName="username"
+              class="form-control">
+            <span
+              *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched"
+              class="alert-danger">Please enter a valid username!</span>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              id="email"
+              class="form-control"
+              formControlName="email">
+            <span
+              *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+              class="alert-danger">Please enter a valid email!</span>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">email</label>
-          <input
-            type="text"
-            id="email"
-            class="form-control"
-            formControlName="email">
-          <span
-            *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
-            class="alert-danger">Please enter a valid email!</span>
-        </div>
+
         <div class="radio" *ngFor="let gender of genders">
           <label>
             <input
@@ -127,7 +130,14 @@
         <div class="card-body">
           <h5 class="card-title">Lesson 206. Reactive: Grouping Controls </h5>
           <p class="card-text"> In the last lecture, I was already mentioning that get also takes the path to an element. What did I mean with that? It's very simple, you can specify a path here because you might have a nested form. Let's say username and e-mail should be inside a FormGroup, we used such forms in the template driven approach too. </p>
-          <p class="card-text">So here we could have a FormGroup which of course like the outer FormGroup for the overall form, also takes a Javascript object and now we can add our form controls inside of this group, so now we have a nested form. <code>routerLink="/servers" </code></p>
+          <p class="card-text">So here we could have a FormGroup which of course like the outer FormGroup for the overall form, also takes a Javascript object and now we can add our form controls inside of this group, so now we have a nested form.
+            <br><code> this.signupForm = new FormGroup(&#123;<br>
+              'userData': new FormGroup(&#123;<br>
+                  'username': new FormControl(null, Validators.required),<br>
+                  'email': new FormControl(null, [Validators.required, Validators.email]),<br>
+              }),<br>
+            'gender': new FormControl('male'),<br>
+            });</code></p>
           <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
