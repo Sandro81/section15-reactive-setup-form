@@ -15,9 +15,7 @@
               *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched"
               class="alert-danger">
               <span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">This name is invalid!</span>
-
             <span *ngIf="signupForm.get('userData.username').errors['required']">This field is required!</span>
-
             </span>
           </div>
           <div class="form-group">
@@ -52,7 +50,7 @@
             type="button"
           (click)="onAddHobby()">Add Hobby</button>
           <div class="form-group"
-          *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
+               *ngFor="let hobbyControl of getControls(); let i = index" >
             <input type="text" class="form-control" [formControlName]="i">
           </div>
         </div>
@@ -193,12 +191,24 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Lesson 210. Reactive: Using Error Codes </h5>
-          <p class="card-text"> - </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text"> This is an example how to handler the errors:</p>
+          <p class="card-text"> <code>&#60;span
+            *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched"
+            class="alert-danger"><br>
+            &#60;span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">This name is invalid!&#60;/span><br>
+            &#60;span *ngIf="signupForm.get('userData.username').errors['required']">This field is required!&#60;/span>
+            &#60;/span></code></p>
         </div>
       </div>
 
-
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson  211. Reactive: Creating a Custom Async Validator</h5>
+          <p class="card-text"> So we also kind of need asynchronous validators which are able to wait for a response before returning true or false, is it valid or not, turns out we can create such asynchronous validators. So let's create one here in the app component, I'll name it forbiddenEmails, this asynchronous validator also takes the control as an argument. </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
 
 
 
