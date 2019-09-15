@@ -179,8 +179,14 @@
               } else &#123;<br>
               return null;<br>
               }</code> Well then this is all, we created our own form validator, our own validator here. Important, it receives the control and it returns this object with an error code and then true for example if it is invalid.</p>
+
+          <p class="card-text"> Let's now check the validity of this input  here, it is invalid but if I enter test here, it stays invalid. The reason for this is that right now I'm checking if control value is part of this array, this will return -1 if it is not part, well -1 is interpreted as true though. So we need to check if this is not equal to -1. So if this is not equal to -1, that means we did find it, that means it is invalid. <code>if (this.forbiddenUsernames.indexOf(control.value) !== -1)</code></p>
         </div>
       </div>
+
+
+
+
 
 
 
