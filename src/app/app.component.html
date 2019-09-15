@@ -99,7 +99,7 @@
           <p class="card-text">in the reactive approach because keep in mind and that's key, you're not configuring the form in the template, you're only synchronizing it with the directives, formControlName and formGroup but you're not configuring it here, the TypeScript code, that's where you configure it. That is why FormControl takes more than one argument, this constructor here.<code>routerLink="/servers" </code></p>
 
           <p class="card-text"> So you can either only pass one validator here, like for username where I only want to make sure that it is required and you do this by adding the validators object, make sure to import it from @angular/forms and there, you get a couple of built-in validators you can use, for example required. <code>'username': new FormControl(null, Validators.required), </code> Now make sure to not call it, to not execute it, so don't have parentheses after it because you don't want to execute this method, it is a static method made available by validators here, instead you only want to pass the reference to this method. Angular will execute the method whenever it detects that the input of this FormControl changed, so it just needs to have a reference on what it should execute at this point of time.</p>
-
+          <p class="card-text">It is possible also to pass an Array of validator  <code>routerLink="/servers" </code></p>
 
 
         </div>
