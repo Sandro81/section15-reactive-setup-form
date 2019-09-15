@@ -216,22 +216,26 @@
         <div class="card-body">
           <h5 class="card-title">Lesson 212. Reactive: Reacting to Status or Value Changes</h5>
           <p class="card-text"> There actually is a form state you can track in general, I'll do this here in ngOnInit. On my signupForm and on each control of this form, so on get any control too, you have two observables you can listen to, statusChanges and valueChanges. </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
-        </div>
-      </div>
+          <p class="card-text"> <code>ngOninit()&#123; <br>
+            this.signupForm.valueChanges.subscribe(<br>
+  (value) => console.log(value)<br>
+);<br>
+          }</code></p>
+    </div>
+  </div>
 
 
 
 
-      <!--
-      <br>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Lesson xxx -> </h5>
-          <p class="card-text"> - </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
-        </div>
-      </div>
+  <!--
+  <br>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Lesson xxx -> </h5>
+      <p class="card-text"> - </p>
+      <p class="card-text"> <code>routerLink="/servers" </code></p>
+    </div>
+  </div>
 -->
 
 
@@ -239,7 +243,7 @@
 
 
 
-    </div>
-  </div>
+</div>
+</div>
 </div>
 
