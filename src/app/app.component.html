@@ -238,7 +238,15 @@
         <div class="card-body">
           <h5 class="card-title">Lesson 213. Reactive: Setting and Patching Values</h5>
           <p class="card-text"> Not only can you listen to the updates in your form, you can also update the form on your own, just like in the template driven approach, setValue and patchValue are there for you. </p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
+          <p class="card-text">So if we do this, we should see that now our form is pre-populated with some values because we immediately call setValue and of course you can also call this upon the click of a button. <code>this.signupForm.setValue(&#123;<br>
+            'userData': &#123;<br>
+            'username': 'Max',<br>
+            'email': 'max@test.com'<br>
+            },<br>
+            'gender': 'male',<br>
+            'hobbies':[]<br>
+            });</code></p>
+          <p class="card-text">And as in the template driven approach, you also have patchValue of course if you only want to update a part of the form, like for example the username, switch this to Anna, now you should see that the username is changed to Anna, the rest still contains the values I set with setValue.<code>routerLink="/servers" </code></p>
         </div>
       </div>
 
