@@ -77,8 +77,6 @@
           <p class="card-text">  Now this simply tells Angular, hey please take my formGroup, don't infer one, don't create a form for me, use my formGroup and we need to set up property binding here because we need to pass our form as an argument to the directive. <code>      &#60;form [formGroup]="signupForm"></code> signupForm is the reference to the app.component.ts <code> signupForm: FormGroup;</code></p>
           <p class="card-text">We're passing this via property binding to the formGroup and now this form is actually synchronized with the form we created in TypeScript but we still need to tell Angular which controls should be connected to which inputs in the template code, for this we get another directive. Well the name is username, this name here because that's the control I want to connect to this input, so I simply pass username here. <code>formControlName="username" </code></p>
           <p class="card-text">So if you want to use property binding, you can do this by wrapping this in square brackets and then enclosing the username in single quotation marks <code>[formControlName]="'username'"</code> otherwise it would search for a property named username but this is overly complicated, if you just want to pass a string, simply omit the square brackets and you're good to go.</p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
-          <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
 
@@ -88,7 +86,17 @@
         <div class="card-body">
           <h5 class="card-title">Lesson 203. Reactive: Submitting the Form </h5>
           <p class="card-text"> - </p>
-          <p class="card-text">Well we still do the same here because we still want to react to this default submit event which is fired by HTML, by Javascript. So we still add ngSubmit here and we could execute an onSubmit method, any method you like. <code>routerLink="/servers" </code></p>
+          <p class="card-text">Well we still do the same here because we still want to react to this default submit event which is fired by HTML, by Javascript. So we still add ngSubmit here and we could execute an onSubmit method, any method you like. <code>&#60;form [formGroup]="signupForm" (ngSubmit)="onSubmit()"> </code></p>
+          <p class="card-text"> So you can bind it to your own model, the model of your application and easily make sure that the form  structure matches the structure of your model. So this is how you can submit the form, how you can still access the value as you did before but now using your own form, the form you created in TypeScript. </p>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 204. Reactive: Adding Validation </h5>
+          <p class="card-text"> Now that we're able to submit a form, let's actually add some validation to it.  </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
         </div>
       </div>
       <!--
