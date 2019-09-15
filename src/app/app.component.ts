@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'section15-reactive-setup-form';
+  genders = ['male', 'female'];
 }
