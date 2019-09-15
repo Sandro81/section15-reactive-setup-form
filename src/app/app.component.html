@@ -13,7 +13,12 @@
               class="form-control">
             <span
               *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched"
-              class="alert-danger">Please enter a valid username!</span>
+              class="alert-danger">
+              <span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">This name is invalid!</span>
+
+            <span *ngIf="signupForm.get('userData.username').errors['required']">This field is required!</span>
+
+            </span>
           </div>
           <div class="form-group">
             <label for="email">email</label>
@@ -184,7 +189,14 @@
         </div>
       </div>
 
-
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 210. Reactive: Using Error Codes </h5>
+          <p class="card-text"> - </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
 
 
 
