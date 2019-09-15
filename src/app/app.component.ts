@@ -29,6 +29,15 @@ export class AppComponent implements OnInit {
       (status) => console.log(status)
     );
 
+    this.signupForm.setValue({
+      'userData': {
+        'username': 'Max',
+        'email': 'max@test.com'
+      },
+      'gender': 'male',
+      'hobbies':[]
+    });
+
 
   }
 
