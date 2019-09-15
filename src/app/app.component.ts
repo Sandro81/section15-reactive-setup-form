@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,10 @@ export class AppComponent implements OnInit{
   signupForm: FormGroup;
 
   ngOnInit(): void {
-    this.signupForm = new FormGroup({});
+    this.signupForm = new FormGroup({
+      'username': new FormControl(''),
+
+    });
   }
 
 }
