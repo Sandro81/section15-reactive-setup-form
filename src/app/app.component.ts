@@ -49,7 +49,9 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm);
-    this.signupForm.reset();
+    this.signupForm.reset({
+      'gender': 'male',
+    });
   }
 
   onAddHobby() {
