@@ -221,8 +221,26 @@
   (value) => console.log(value)<br>
 );<br>
           }</code></p>
+          <p class="card-text">We Can also track the STATUS <code>          this.signupForm.statusChanges.subscribe(<br>
+            (status) => console.log(status)<br>
+            );</code></p>
+
+
+          this.signupForm.statusChanges.subscribe(
+          (status) => console.log(status)
+          );
     </div>
   </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 213. Reactive: Setting and Patching Values</h5>
+          <p class="card-text"> Not only can you listen to the updates in your form, you can also update the form on your own, just like in the template driven approach, setValue and patchValue are there for you. </p>
+          <p class="card-text"> <code>routerLink="/servers" </code></p>
+        </div>
+      </div>
 
 
 
