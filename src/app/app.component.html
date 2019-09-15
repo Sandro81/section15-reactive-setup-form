@@ -10,6 +10,9 @@
             id="username"
             formControlName="username"
             class="form-control">
+          <span
+            *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched"
+            class="alert-danger">Please enter a valid username!</span>
         </div>
         <div class="form-group">
           <label for="email">email</label>
@@ -17,7 +20,10 @@
             type="text"
             id="email"
             class="form-control"
-            name="email">
+            formControlName="email">
+          <span
+            *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+            class="alert-danger">Please enter a valid username!</span>
         </div>
         <div class="radio" *ngFor="let gender of genders">
           <label>
@@ -96,14 +102,25 @@
         <div class="card-body">
           <h5 class="card-title">Lesson 204. Reactive: Adding Validation </h5>
           <p class="card-text"> Now that we're able to submit a form, let's actually add some validation to it.  </p>
-          <p class="card-text">in the reactive approach because keep in mind and that's key, you're not configuring the form in the template, you're only synchronizing it with the directives, formControlName and formGroup but you're not configuring it here, the TypeScript code, that's where you configure it. That is why FormControl takes more than one argument, this constructor here.<code>routerLink="/servers" </code></p>
+          <p class="card-text">in the reactive approach because keep in mind and that's key, you're not configuring the form in the template, you're only synchronizing it with the directives, formControlName and formGroup but you're not configuring it here, the TypeScript code, that's where you configure it. That is why FormControl takes more than one argument, this constructor here.</p>
 
           <p class="card-text"> So you can either only pass one validator here, like for username where I only want to make sure that it is required and you do this by adding the validators object, make sure to import it from @angular/forms and there, you get a couple of built-in validators you can use, for example required. <code>'username': new FormControl(null, Validators.required), </code> Now make sure to not call it, to not execute it, so don't have parentheses after it because you don't want to execute this method, it is a static method made available by validators here, instead you only want to pass the reference to this method. Angular will execute the method whenever it detects that the input of this FormControl changed, so it just needs to have a reference on what it should execute at this point of time.</p>
-          <p class="card-text">It is possible also to pass an Array of validator  <code>routerLink="/servers" </code></p>
+          <p class="card-text">It is possible also to pass an Array of validator  <code>'email': new FormControl(null, [Validators.required, Validators.email]),</code></p>
 
 
         </div>
       </div>
+
+
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lesson 205. Reactive: Getting Access to Controls</h5>
+          <p class="card-text">The get method allows us to get access to our controls easily, here you can either specify the control name or I will come back to this later, the path to the control. Now for now the path is the name because we only have one level of nesting in our form object and here, the name is username. So this gives us access to this username control and now valid holds whether this control is valid or not. <code>&#60;span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched" class="alert-danger">Please enter a valid username!&#60;/span></code> So this is how easy you can get access to a control in your form with this get helper method.</p>
+        </div>
+      </div>
+
+
       <!--
       <br>
       <div class="card">
