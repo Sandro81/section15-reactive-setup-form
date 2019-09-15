@@ -11,11 +11,11 @@ export class AppComponent implements OnInit {
   signupForm: FormGroup;
 
   ngOnInit(): void {
-   /* this.signupForm = new FormGroup({
+    this.signupForm = new FormGroup({
       'username': new FormControl(null),
       'email': new FormControl(null),
       'gender': new FormControl('male'),
-    });*/
+    });
   }
 
 }
